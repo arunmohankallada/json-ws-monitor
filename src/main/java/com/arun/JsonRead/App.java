@@ -19,13 +19,16 @@ public class App
     public static void main( String[] args )
     {
         JSONParser parser = new JSONParser();
-
+        
         try {
 
-        	JSONArray jsonArray = (JSONArray) parser.parse(new FileReader("/Users/arunmohan/dev/eclipse-workspace/JsonRead/src/main/resources/WSList.json"));
+        	JSONArray jsonArray = (JSONArray) parser.parse(new FileReader(new ClasspathFileReader().readInputJson()));
+        	
+        	
 
         for (Object o : jsonArray) {
         	JSONObject jsonObject = (JSONObject) o;
+        	System.out.print("Input:"+jsonObject+"\nOutput:");
         	WebService ws = new WebService(jsonObject);
         	JSONObject resultJson=ws.printResult();
         	System.out.println(resultJson);
