@@ -1,0 +1,12 @@
+  [  
+    {
+      "servicename": "google",
+      "servicelink": "http://www.google.com",
+      "servicemethod": "GET"
+   },
+        {
+      "servicename": "India List",
+      "servicelink": "https://restcountries.eu/rest/v2/name/India",
+      "servicemethod": "GET"
+    }
+ ]
