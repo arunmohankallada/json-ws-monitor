@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  * Hello world!
- * Commit Test
+ * 
  */
 public class App 
 {
@@ -27,7 +27,8 @@ public class App
         for (Object o : jsonArray) {
         	JSONObject jsonObject = (JSONObject) o;
         	WebService ws = new WebService(jsonObject);
-        	ws.printResult();
+        	JSONObject resultJson=ws.printResult();
+        	System.out.println(resultJson);
         }
          
 
