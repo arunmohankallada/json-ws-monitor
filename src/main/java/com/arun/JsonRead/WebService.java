@@ -44,12 +44,19 @@ public class WebService {
         http.setRequestMethod(this.getServiceMethod());
         return http.getResponseCode();
 	}
-	public void printResult() throws IOException {	
-		System.out.println("ServiceName   : "+ this.getServiceName());
+	public JSONObject printResult() throws IOException {	
+		/*System.out.println("ServiceName   : "+ this.getServiceName());
 		System.out.println("ServiceLink   : "+ this.getServiceLink());
 		System.out.println("ServiceMethod : "+ this.getServiceMethod());
 		System.out.println("ReturnCode    : "+getResponseCode());
-		System.out.println("--------------------------------------------");
+		System.out.println("--------------------------------------------");*/
+		
+		JSONObject resultJson = new JSONObject();
+		resultJson.put("servicename",this.getServiceName());
+		resultJson.put("response",this.getResponseCode() );
+		return resultJson;
+		
+		
 	}
 
 }
